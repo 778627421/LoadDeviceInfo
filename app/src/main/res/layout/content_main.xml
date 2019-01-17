@@ -24,4 +24,12 @@
     app:layout_constraintTop_toTopOf="parent"
     android:layout_height="40dp" />
 
+<Button
+    android:id="@+id/show_device_info_gps"
+    android:layout_width="wrap_content"
+    android:text="Sysytem gps"
+    app:layout_constraintLeft_toRightOf="@id/show_device_info_sys"
+    app:layout_constraintTop_toTopOf="parent"
+    android:layout_height="40dp" />
+
 </android.support.constraint.ConstraintLayout>

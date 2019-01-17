@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     package="com.qull.lib.loaddeviceinfo">
-
+    <uses-permission android:name="android.permission.INTERNET" />
     <!-- 读取短信 -->
     <uses-permission android:name="android.permission.RECEIVE_SMS" />
     <uses-permission android:name="android.permission.READ_SMS" />
@@ -16,6 +16,13 @@
 
 
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+
+    <!-- 粗略定位授权 -->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <!-- 精细定位授权 -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
 
     <!--tools:ignore="GoogleAppIndexingWarning" 关闭警告-->
     <application

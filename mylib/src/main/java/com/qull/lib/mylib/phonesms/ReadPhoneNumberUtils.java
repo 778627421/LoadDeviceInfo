@@ -13,6 +13,7 @@ import java.util.HashMap;
  * Version:V1.0
  * Author:qulonglong
  * Date:2019/1/15
+ *  获取手机联系人列表
  */
 
 public class ReadPhoneNumberUtils {

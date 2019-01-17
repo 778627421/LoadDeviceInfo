@@ -19,6 +19,7 @@ import android.widget.Button;
 import com.google.gson.Gson;
 import com.qull.lib.mylib.PermissionManager;
 import com.qull.lib.mylib.deviceapp.SystemUtil;
+import com.qull.lib.mylib.location.GPSUtils;
 import com.qull.lib.mylib.phonesms.ContactInfo;
 import com.qull.lib.mylib.phonesms.PhoneBean;
 
@@ -88,6 +89,32 @@ public class MainActivity extends AppCompatActivity {
                     @Override
                     public void onGranted(int requestCode) {
                         SystemUtil.showSystemParameterTest(MainActivity.this);
+                    }
+
+                    @Override
+                    public void onDenied(int requestCode) {
+
+                    }
+
+                    @Override
+                    public void onAlwaysDenied(int requestCode, List<String> permissions) {
+
+                    }
+                });
+            }
+        });
+
+        Button gspBtn=findViewById(R.id.show_device_info_gps);
+        gspBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                                PermissionManager.sharedInstance().requestPermissions(MainActivity.this, new String[]{Manifest.permission.ACCESS_FINE_LOCATION,Manifest.permission.WRITE_EXTERNAL_STORAGE}, PermissionManager.RequestCodeLocation, new PermissionManager.Listener() {
+                    @Override
+                    public void onGranted(int requestCode) {
+                        GPSUtils gpsUtils=new GPSUtils(MainActivity.this);
+
+                        GPSUtils.getAddressStr();
+                        GPSUtils.getLocalCity();
                     }
 
                     @Override

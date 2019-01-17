@@ -14,6 +14,7 @@ import java.util.List;
  * Version:V1.0
  * Author:qulonglong
  * Date:2019/1/15
+ * 获取所有软件名字
  */
 
 public class ApplicationUtil {
