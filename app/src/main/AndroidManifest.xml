@@ -11,6 +11,12 @@
     <uses-permission android:name="android.permission.READ_CONTACTS" />
     <uses-permission android:name="android.permission.GET_ACCOUNTS"/>
 
+    <!--获取手机IMEI-->
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+
+
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+
     <!--tools:ignore="GoogleAppIndexingWarning" 关闭警告-->
     <application
         android:allowBackup="true"

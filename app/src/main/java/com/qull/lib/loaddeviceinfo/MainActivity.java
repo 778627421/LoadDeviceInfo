@@ -14,9 +14,11 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 
 import com.google.gson.Gson;
 import com.qull.lib.mylib.PermissionManager;
+import com.qull.lib.mylib.deviceapp.SystemUtil;
 import com.qull.lib.mylib.phonesms.ContactInfo;
 import com.qull.lib.mylib.phonesms.PhoneBean;
 
@@ -76,6 +78,28 @@ public class MainActivity extends AppCompatActivity {
 
                 Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
+            }
+        });
+        Button button=findViewById(R.id.show_device_info_sys);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                                PermissionManager.sharedInstance().requestPermissions(MainActivity.this, new String[]{Manifest.permission.READ_PHONE_STATE}, PermissionManager.RequestCodePhone, new PermissionManager.Listener() {
+                    @Override
+                    public void onGranted(int requestCode) {
+                        SystemUtil.showSystemParameterTest(MainActivity.this);
+                    }
+
+                    @Override
+                    public void onDenied(int requestCode) {
+
+                    }
+
+                    @Override
+                    public void onAlwaysDenied(int requestCode, List<String> permissions) {
+
+                    }
+                });
             }
         });
     }
